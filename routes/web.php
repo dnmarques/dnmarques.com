@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -12,7 +13,9 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('home');
+
+Route::post('/contact', [ContactController::class, 'contact'])->name ('contact');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -1,3 +1,405 @@
+import React, { useState } from 'react';
+import { Github, Linkedin, Mail, ExternalLink, Instagram, Building2, Calendar, Coffee, Briefcase, BookOpen, Piano, ChevronDown } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageContext';
+import { LanguageSwitcher } from '@/Components/LanguageSwitcher';
+import {Head, useForm} from '@inertiajs/react';
+
+const skills = [
+    {
+        name: "React",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    },
+    {
+        name: "PHP",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+    },
+    {
+        name: "Laravel",
+        icon: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg"
+    },
+    {
+        name: "Nginx",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg"
+    },
+    {
+        name: "MySQL",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+    },
+    {
+        name: "Redis",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
+    },
+    {
+        name: "Git",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+    },
+    {
+        name: "SCRUM",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
+    }
+];
+
+function App() {
+    const { t } = useLanguage();
+
+    const projects = [
+        {
+            title: "Doinn",
+            description: t('doinnDescription'),
+            image: "images/doinn.png",
+            tags: ["Laravel", "API", "Websockets", "ReactJS"],
+            link: "https://doinn.co"
+        },
+        {
+            title: "Prevalece",
+            description: t("prevaleceDescription"),
+            image: "images/prevalece.png",
+            tags: ["Laravel", "InertiaJS", "ReactJs", "TailwindCSS"],
+            link: "https://prevalece.pt"
+        }
+    ];
+
+    const contactDefaults = {
+        name: '',
+        email: '',
+        message: ''
+    }
+    const { data, setData, post, wasSuccessful, reset } = useForm(contactDefaults);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        post(route('contact'), { preserveScroll: true, onSuccess: () => reset()})
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setData({
+            ...data,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    return (
+        <>
+            <Head title="Diogo Marques" />
+            <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black">
+                {/* Header */}
+                <header className="fixed top-0 left-0 right-0 z-50 bg-gray-950/80 backdrop-blur-sm border-b border-white/10">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="flex items-center justify-between h-16">
+                            <div className="text-white font-semibold">Diogo Marques</div>
+                            <div className="flex items-center gap-8">
+                                <nav className="hidden md:flex space-x-8">
+                                    <button
+                                        onClick={() => scrollToSection('about')}
+                                        className="text-gray-300 hover:text-white transition-colors"
+                                    >
+                                        {t('about')}
+                                    </button>
+                                    <button
+                                        onClick={() => scrollToSection('projects')}
+                                        className="text-gray-300 hover:text-white transition-colors"
+                                    >
+                                        {t('projects')}
+                                    </button>
+                                    <button
+                                        onClick={() => scrollToSection('contact')}
+                                        className="text-gray-300 hover:text-white transition-colors"
+                                    >
+                                        {t('contact')}
+                                    </button>
+                                </nav>
+                                <LanguageSwitcher />
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                {/* Hero Section */}
+                <div className="relative min-h-screen flex items-center">
+                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDYwIEwgNjAgMCIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40 pointer-events-none -z-10"></div>
+                    <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-32">
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+                            <div className="text-left md:w-1/2">
+                                <h1 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-bl from-green-600 via-green-50 to-green-600 text-transparent bg-clip-text [text-wrap:balance]">
+                                    {t('creativeTitle')}
+                                </h1>
+                                <p className="text-xl text-gray-300 mb-8">
+                                    {t('heroDescription')}
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                                    <button
+                                        onClick={() => scrollToSection('contact')}
+                                        className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20"
+                                    >
+                                        {t('heroCTA')}
+                                    </button>
+                                    <div className="flex gap-6">
+                                        <a href="https://github.com/dnmarques" className="text-gray-300 hover:text-white transition-colors">
+                                            <Github size={24} />
+                                        </a>
+                                        <a href="https://www.linkedin.com/in/dnmarques/" className="text-gray-300 hover:text-white transition-colors">
+                                            <Linkedin size={24} />
+                                        </a>
+                                        <a href="mailto:diogo@dnmarques.com" className="text-gray-300 hover:text-white transition-colors">
+                                            <Mail size={24} />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="md:w-1/2 flex justify-center">
+                                <div className="relative max-w-80 h-80 md:w-80 md:h-80">
+                                    <img
+                                        src="images/diogo1024x1024.png"
+                                        alt="Professional headshot"
+                                        className="rounded-2xl object-cover w-full h-full shadow-2xl"
+                                    />
+                                    <div className="absolute inset-0 rounded-2xl ring-1 ring-white/20"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Bouncing Arrow */}
+                    <button
+                        onClick={() => scrollToSection('about')}
+                        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 hover:text-white transition-colors animate-bounce"
+                        aria-label="Scroll to About section"
+                    >
+                        <ChevronDown size={32} />
+                    </button>
+                </div>
+
+                {/* About Section */}
+                <div id="about" className="relative py-24 overflow-hidden">
+                    <div className="absolute inset-0 bg-white/[0.02]"></div>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                        <h2 className="text-3xl font-bold text-white mb-8">{t('aboutTitle')}</h2>
+                        <div className="space-y-8">
+                            <div className="prose prose-invert max-w-3xl">
+                                <p className="text-gray-300 text-lg leading-relaxed">
+                                    {t('aboutDescription')}
+                                </p>
+                            </div>
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <Briefcase className="text-gray-400" size={20} />
+                                        <h3 className="text-white font-medium">{t('workTitle')}</h3>
+                                    </div>
+                                    <p className="text-gray-300 text-sm">{t('workDescription')}</p>
+                                </div>
+                                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <BookOpen className="text-gray-400" size={20} />
+                                        <h3 className="text-white font-medium">{t('educationTitle')}</h3>
+                                    </div>
+                                    <p className="text-gray-300 text-sm">{t('educationDescription')}</p>
+                                </div>
+                                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <Piano className="text-gray-400" size={20} />
+                                        <h3 className="text-white font-medium">{t('hobbiesTitle')}</h3>
+                                    </div>
+                                    <p className="text-gray-300 text-sm">{t('hobbiesDescription')}</p>
+                                </div>
+                                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <Coffee className="text-gray-400" size={20} />
+                                        <h3 className="text-white font-medium">{t('interestsTitle')}</h3>
+                                    </div>
+                                    <p className="text-gray-300 text-sm">{t('interestsDescription')}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Skills Section */}
+                <div id="skills" className="scroll-mt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+                    <div className="text-center">
+                        <h2 className="text-3xl font-bold text-white mb-12">{t('skillsTitle')}</h2>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                            {skills.map((skill, index) => (
+                                <div
+                                    key={index}
+                                    className="flex items-center gap-3 p-4 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10"
+                                >
+                                    <img
+                                        src={skill.icon}
+                                        alt={`${skill.name} logo`}
+                                        className="w-8 h-8 object-contain"
+                                    />
+                                    <span className="text-gray-300">
+                      {skill.name}
+                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Projects Section */}
+                <div id="projects" className="scroll-mt-16 py-24 bg-white/[0.02]">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 className="text-3xl font-bold text-white mb-12 text-center">{t('projectsTitle')}</h2>
+                        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {projects.map((project, index) => (
+                                <div key={index} className="group relative bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 hover:border-gray-500/50 transition-all duration-300">
+                                    <div className="aspect-w-16 aspect-h-9">
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="object-cover w-full h-48"
+                                        />
+                                    </div>
+                                    <div className="p-6">
+                                        <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                                        <p className="text-gray-300 mb-4">{project.description}</p>
+                                        <div className="flex flex-wrap gap-2 mb-4">
+                                            {project.tags.map((tag, tagIndex) => (
+                                                <span key={tagIndex} className="px-3 py-1 bg-gray-800 text-gray-200 rounded-full text-sm">
+                            {tag}
+                          </span>
+                                            ))}
+                                        </div>
+                                        <a
+                                            href={project.link}
+                                            className="inline-flex items-center text-gray-300 hover:text-white transition-colors"
+                                        >
+                                            {t('viewProject')} <ExternalLink size={16} className="ml-2" />
+                                        </a>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Contact Section */}
+                <div id="contact" className="scroll-mt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-bold text-white mb-4">{t('contactSectionTitle')}</h2>
+                        <p className="text-gray-300 max-w-2xl mx-auto">
+                            {t('contactDescription')}
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-12 items-start">
+                        {/* Contact Form */}
+                        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                            <h3 className="text-xl font-semibold text-white mb-6">{t('contactTitle')}</h3>
+                            <form onSubmit={handleSubmit} className="space-y-6">
+                                <div>
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-2">
+                                        {t('name')}
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        value={data.name}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-colors"
+                                        placeholder={t('namePlaceholder')}
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">
+                                        {t('email')}
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        value={data.email}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-colors"
+                                        placeholder={t('emailPlaceholder')}
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">
+                                        {t('message')}
+                                    </label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        value={data.message}
+                                        onChange={handleChange}
+                                        rows={4}
+                                        className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition-colors resize-none"
+                                        placeholder={t('messagePlaceholder')}
+                                        required
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="w-full px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-white/20"
+                                >
+                                    {t('sendMessage')}
+                                </button>
+                                { wasSuccessful && <div className={'flex w-full justify-center'}>
+                                    <span className={'text-green-700'}>{t('contactSuccess')}</span>
+                                </div>}
+                            </form>
+                        </div>
+
+                        {/* Social Links */}
+                        <div className="space-y-8">
+                            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                                <h3 className="text-xl font-semibold text-white mb-6">{t('connectTitle')}</h3>
+                                <div className="space-y-2">
+                                    <a href="https://github.com/dnmarques" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors p-4 rounded-lg hover:bg-white/5">
+                                        <Github size={24} />
+                                        <span>{t('followGithub')}</span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/dnmarques/" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors p-4 rounded-lg hover:bg-white/5">
+                                        <Linkedin size={24} />
+                                        <span>{t('connectLinkedin')}</span>
+                                    </a>
+                                    <a href="https://www.instagram.com/itdiogo" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors p-4 rounded-lg hover:bg-white/5">
+                                        <Instagram size={24} />
+                                        <span>{t('followInstagram')}</span>
+                                    </a>
+                                    <a href="mailto:diogo@dnmarques.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors p-4 rounded-lg hover:bg-white/5">
+                                        <Mail size={24} />
+                                        <span>{t('sendEmail')}</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                                <h3 className="text-xl font-semibold text-white mb-4">{t('locationTitle')}</h3>
+                                <p className="text-gray-300">{t('locationText')}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Footer */}
+                <footer className="border-t border-white/10 mt-24">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                        <p className="text-center text-gray-400">
+                            © {new Date().getFullYear()} Diogo Marques. {t('allRightsReserved')}
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </>
+    );
+}
+
+export default App;
+/*
 import { PageProps } from '@/types';
 import { Head, Link } from '@inertiajs/react';
 
@@ -364,3 +766,4 @@ export default function Welcome({
         </>
     );
 }
+*/
