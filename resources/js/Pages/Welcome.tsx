@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Instagram, Building2, Calendar, Coffee, Briefcase, BookOpen, Piano, ChevronDown, Globe } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Instagram, Building2, Calendar, Coffee, Briefcase, BookOpen, Piano, ChevronDown, Globe, Download } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { LanguageSwitcher } from '@/Components/LanguageSwitcher';
 import {Head, useForm} from '@inertiajs/react';
@@ -114,6 +114,14 @@ function App() {
                                     >
                                         {t('contact')}
                                     </button>
+                                    <a
+                                        href="/documents/Diogo Marques - CV.pdf"
+                                        download
+                                        className="text-gray-300 hover:text-white transition-colors flex items-center gap-1"
+                                    >
+                                        <Download size={16} />
+                                        CV
+                                    </a>
                                 </nav>
                                 <LanguageSwitcher />
                             </div>
@@ -122,7 +130,7 @@ function App() {
                 </header>
 
                 {/* Hero Section */}
-                <div className="relative min-h-screen flex items-center">
+                <div className="relative w-full min-h-screen flex items-center">
                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDYwIEwgNjAgMCIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40 pointer-events-none -z-10"></div>
                     <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-32">
                         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
@@ -137,12 +145,14 @@ function App() {
                                     {t('heroDescription')}
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-                                    <button
-                                        onClick={() => scrollToSection('contact')}
-                                        className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20"
+                                    <a
+                                        href="/documents/Diogo Marques - CV.pdf"
+                                        download
+                                        className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20 inline-flex items-center gap-2"
                                     >
-                                        {t('heroCTA')}
-                                    </button>
+                                        <Download size={20} />
+                                        {t('downloadCV')}
+                                    </a>
                                     <div className="flex gap-6">
                                         <a href="https://github.com/dnmarques" className="text-gray-300 hover:text-white transition-colors">
                                             <Github size={24} />
@@ -172,7 +182,7 @@ function App() {
                     {/* Bouncing Arrow */}
                     <button
                         onClick={() => scrollToSection('about')}
-                        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 hover:text-white transition-colors animate-bounce"
+                        className="absolute bottom-8 left-0 right-0 mx-auto w-fit text-white/50 hover:text-white transition-colors animate-bounce"
                         aria-label="Scroll to About section"
                     >
                         <ChevronDown size={32} />

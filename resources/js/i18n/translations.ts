@@ -12,6 +12,7 @@ export const translations: {[index: string]: any} = {
     heroSubtitle: "Senior Full-Stack Developer | Laravel Expert",
     heroDescription: "I bridge technology and business, building web solutions that drive efficiency and growth.",
     heroCTA: "Let's Work Together",
+    downloadCV: "Download CV",
 
     // About
     aboutTitle: "About Me",
@@ -92,6 +93,7 @@ export const translations: {[index: string]: any} = {
     "heroSubtitle": "Senior Full-Stack Developer | Laravel Expert",
     "heroDescription": "Sou a ponte entre tecnologia e negócios, criando soluções web que aumentam a eficiência e o crescimento.",
     "heroCTA": "Vamos Trabalhar Juntos",
+    "downloadCV": "Descarregar CV",
 
     // Sobre
     "aboutTitle": "Sobre Mim",
@@ -172,6 +174,7 @@ export const translations: {[index: string]: any} = {
     "heroSubtitle": "Senior Full-Stack Entwickler | Laravel Experte",
     "heroDescription": "Ich verbinde Technologie und Business und entwickle Weblösungen, die Effizienz und Wachstum fördern.",
     "heroCTA": "Lass uns zusammenarbeiten",
+    "downloadCV": "Lebenslauf herunterladen",
 
     // About
     "aboutTitle": "Über mich",
