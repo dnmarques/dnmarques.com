@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Instagram, Building2, Calendar, Coffee, Briefcase, BookOpen, Piano, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Instagram, Building2, Calendar, Coffee, Briefcase, BookOpen, Piano, ChevronDown, Globe } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { LanguageSwitcher } from '@/Components/LanguageSwitcher';
 import {Head, useForm} from '@inertiajs/react';
@@ -127,9 +127,12 @@ function App() {
                     <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-32">
                         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
                             <div className="text-left md:w-1/2">
-                                <h1 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-bl from-green-600 via-green-50 to-green-600 text-transparent bg-clip-text [text-wrap:balance]">
+                                <h1 className="text-4xl sm:text-6xl font-bold mb-3 bg-gradient-to-bl from-green-600 via-green-50 to-green-600 text-transparent bg-clip-text [text-wrap:balance]">
                                     {t('creativeTitle')}
                                 </h1>
+                                <p className="text-lg sm:text-xl text-gray-400 mb-6 font-medium">
+                                    {t('heroSubtitle')}
+                                </p>
                                 <p className="text-xl text-gray-300 mb-8">
                                     {t('heroDescription')}
                                 </p>
@@ -278,6 +281,49 @@ function App() {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Education & Languages Section */}
+                <div className="relative py-24 overflow-hidden">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 className="text-3xl font-bold text-white mb-12 text-center">{t('educationLanguagesTitle')}</h2>
+                        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                            {/* Education */}
+                            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <BookOpen className="text-green-400" size={24} />
+                                    <h3 className="text-xl font-semibold text-white">{t('educationTitle')}</h3>
+                                </div>
+                                <div className="space-y-2">
+                                    <p className="text-white font-medium text-lg">{t('educationDegree')}</p>
+                                    <p className="text-gray-300">{t('educationSchool')}</p>
+                                    <p className="text-gray-400 text-sm">{t('educationYear')}</p>
+                                </div>
+                            </div>
+
+                            {/* Languages */}
+                            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <Globe className="text-green-400" size={24} />
+                                    <h3 className="text-xl font-semibold text-white">{t('languagesSpoken')}</h3>
+                                </div>
+                                <div className="space-y-4">
+                                    <div>
+                                        <p className="text-white font-medium">{t('languagePortuguese')}</p>
+                                        <p className="text-gray-400 text-sm">{t('languagePortugueseLevel')}</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-white font-medium">{t('languageEnglish')}</p>
+                                        <p className="text-gray-400 text-sm">{t('languageEnglishLevel')}</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-white font-medium">{t('languageGerman')}</p>
+                                        <p className="text-gray-400 text-sm">{t('languageGermanLevel')}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -9,12 +9,13 @@ export const translations: {[index: string]: any} = {
 
     // Hero
     creativeTitle: "Hi, I'm Diogo Marques",
+    heroSubtitle: "Senior Full-Stack Developer | Laravel Expert",
     heroDescription: "I bridge technology and business, building web solutions that drive efficiency and growth.",
     heroCTA: "Let's Work Together",
 
     // About
     aboutTitle: "About Me",
-    aboutDescription: "My journey into web development began with a deep curiosity about how browser games worked. That curiosity quickly grew into a passion for building digital solutions. Working in startups since graduation, I’ve learned to ask the right questions, engage stakeholders, and bridge the gap between business and technology. What sets me apart from other developers (and even AI tools) is that I don’t just execute tasks. I challenge ideas, ask insightful questions, and collaborate to define business rules that truly drive success.",
+    aboutDescription: "My journey into web development began with a deep curiosity about how browser games worked. That curiosity quickly grew into a passion for building digital solutions. Working in startups since graduation, I've learned to ask the right questions, engage stakeholders, and bridge the gap between business and technology. What sets me apart from other developers (and even AI tools) is that I don't just execute tasks. I challenge ideas, ask insightful questions, and collaborate to define business rules that truly drive success.",
     workTitle: "Work",
     workDescription: "Full-stack developer specializing in Laravel ecosystems",
     educationTitle: "Education",
@@ -34,6 +35,18 @@ export const translations: {[index: string]: any} = {
 
     // Skills
     skillsTitle: "Technical Skills",
+    // Education & Languages
+    educationLanguagesTitle: "Education & Languages",
+    educationDegree: "Licentiate in Software Engineering",
+    educationSchool: "Universidade Nova de Lisboa",
+    educationYear: "2016",
+    languagesSpoken: "Languages",
+    languagePortuguese: "Portuguese",
+    languagePortugueseLevel: "Native",
+    languageEnglish: "English",
+    languageEnglishLevel: "Fluent",
+    languageGerman: "German",
+    languageGermanLevel: "Basic (A2) - Progressing to B1 by mid-2026",
 
     // Contact
     contactSectionTitle: "Get in touch",
@@ -63,8 +76,8 @@ export const translations: {[index: string]: any} = {
     allRightsReserved: "All rights reserved.",
 
     // Projects
-    doinnDescription: "Doinn is an all-in-one platform that streamlines housekeeping operations for property managers and cleaning companies, enhancing efficiency and service quality.",
-    prevaleceDescription: "Prevalece is a user-friendly platform that helps individuals in Portugal monitor their financial performance to build a secure and independent retirement."
+    doinnDescription: "Led development as Tech Lead on an all-in-one platform streamlining operations for property managers and cleaning companies. Architected Smart Scheduling module, Staff Management, Quality Management, and integrated multiple PMS systems, payment processors (Stripe, Braintree), and subscription platforms (Chargebee).",
+    prevaleceDescription: "Solo developed a production-ready fintech SaaS platform for retirement planning and financial management in Portugal. Implemented investment tracking, portfolio performance analysis, and comprehensive financial decision-making tools using Laravel, InertiaJS, and ReactJS."
   },
   pt: {
     // Navegação
@@ -76,6 +89,7 @@ export const translations: {[index: string]: any} = {
 
     // Hero
     "creativeTitle": "Olá, sou o Diogo Marques",
+    "heroSubtitle": "Senior Full-Stack Developer | Laravel Expert",
     "heroDescription": "Sou a ponte entre tecnologia e negócios, criando soluções web que aumentam a eficiência e o crescimento.",
     "heroCTA": "Vamos Trabalhar Juntos",
 
@@ -101,6 +115,17 @@ export const translations: {[index: string]: any} = {
 
     // Competências
     "skillsTitle": "Competências Técnicas",
+    "educationLanguagesTitle": "Educação & Línguas",
+    "educationDegree": "Licenciatura em Engenharia Informática",
+    "educationSchool": "Universidade Nova de Lisboa",
+    "educationYear": "2016",
+    "languagesSpoken": "Línguas",
+    "languagePortuguese": "Português",
+    "languagePortugueseLevel": "Nativo",
+    "languageEnglish": "Inglês",
+    "languageEnglishLevel": "Fluente",
+    "languageGerman": "Alemão",
+    "languageGermanLevel": "Básico (A2) - Em progresso para B1 até meados de 2026",
 
     // Contacto
     "contactSectionTitle": "Entra em contacto",
@@ -130,8 +155,8 @@ export const translations: {[index: string]: any} = {
     "allRightsReserved": "Todos os direitos reservados.",
 
     // Projects
-    "doinnDescription": "A Doinn é uma plataforma tudo-em-um que otimiza operações de limpeza para gestores de propriedades e empresas de limpeza, melhorando a eficiência e a qualidade do serviço.",
-    "prevaleceDescription": "A Prevalece é uma plataforma intuitiva que ajuda portugueses a monitorizar o seu desempenho financeiro para construir uma reforma segura e independente."
+    "doinnDescription": "Liderei o desenvolvimento como Tech Lead numa plataforma tudo-em-um que otimiza operações para gestores de propriedades e empresas de limpeza. Arquitectei o módulo de Smart Scheduling, Gestão de Equipas, Gestão de Qualidade e integrei múltiplos sistemas PMS, processadores de pagamento (Stripe, Braintree), plataformas de subscrição (Chargebee), entre outros.",
+    "prevaleceDescription": "Desenvolvi sozinho uma plataforma SaaS fintech para o planeamento da reforma e gestão financeira. Implementei análise de desempenho de investimentos e ferramentas abrangentes para ajudar na tomada de decisão financeira."
 
   },
   de: {
@@ -144,6 +169,7 @@ export const translations: {[index: string]: any} = {
 
     // Hero
     "creativeTitle": "Hallo, ich bin Diogo Marques",
+    "heroSubtitle": "Senior Full-Stack Entwickler | Laravel Experte",
     "heroDescription": "Ich verbinde Technologie und Business und entwickle Weblösungen, die Effizienz und Wachstum fördern.",
     "heroCTA": "Lass uns zusammenarbeiten",
 
@@ -169,6 +195,18 @@ export const translations: {[index: string]: any} = {
 
     // Skills
     "skillsTitle": "Technische Fähigkeiten",
+    // Ausbildung & Sprachen
+    "educationLanguagesTitle": "Ausbildung & Sprachen",
+    "educationDegree": "Lizentiat in Software Engineering",
+    "educationSchool": "Universidade Nova de Lisboa",
+    "educationYear": "2016",
+    "languagesSpoken": "Sprachen",
+    "languagePortuguese": "Portugiesisch",
+    "languagePortugueseLevel": "Muttersprache",
+    "languageEnglish": "Englisch",
+    "languageEnglishLevel": "Fließend",
+    "languageGerman": "Deutsch",
+    "languageGermanLevel": "Grundkenntnisse (A2) - Fortschritt zu B1 bis Mitte 2026",
 
     // Contact
     "contactSectionTitle": "Kontaktiere mich",
@@ -198,7 +236,7 @@ export const translations: {[index: string]: any} = {
     "allRightsReserved": "Alle Rechte vorbehalten.",
 
     // Projects
-    "doinnDescription": "Doinn ist eine All-in-One-Plattform, die Reinigungsabläufe für Immobilienverwalter und Reinigungsunternehmen optimiert, um Effizienz und Servicequalität zu verbessern.",
-    "prevaleceDescription": "Prevalece ist eine benutzerfreundliche Plattform, die Menschen in Portugal hilft, ihre finanzielle Leistung zu überwachen, um eine sichere und unabhängige Altersvorsorge aufzubauen."
+    "doinnDescription": "Leitete die Entwicklung als Tech Lead für eine All-in-One-Plattform zur Optimierung von Abläufen für Immobilienverwalter und Reinigungsunternehmen. Architektur des Smart Scheduling-Moduls, Mitarbeiterverwaltung, Qualitätsmanagement und Integration mehrerer PMS-Systeme, Zahlungsprozessoren (Stripe, Braintree) und Abonnement-Plattformen (Chargebee).",
+    "prevaleceDescription": "Alleinige Entwicklung einer produktionsreifen Fintech-SaaS-Plattform für Altersvorsorge und Finanzmanagement in Portugal. Implementierung von Investment-Tracking, Portfolio-Performance-Analyse und umfassenden Werkzeugen für finanzielle Entscheidungen mit Laravel, InertiaJS und ReactJS."
   }
 };
